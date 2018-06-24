@@ -38,16 +38,17 @@ class World(object):
             kicker.create()
 
     def evolve(self, isCustom):
+
         def handler(scene):
             frame = scene.frame_current
             if frame in range(0, 250, 10):
-                metKicker = 0          
+                metKicker = False          
                 for kicker in self._kickers:
                     if kicker.pos == self._monkey.pos:
                         self._monkey.move(kicker.strenght)
-                        metKicker = 1
+                        metKicker = True
                         break
-                if metKicker == 0:
+                if metKicker == False:
                     if isCustom:
                         self._monkey.evolveCustom()
                     else:
