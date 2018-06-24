@@ -5,6 +5,7 @@ from monkey import Monkey
 from config import Config
 from grid import Grid
 from kicker import Kicker
+from mathutils import Vector
 
 class World(object):
     def __init__(self, config):
