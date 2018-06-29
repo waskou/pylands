@@ -3,6 +3,7 @@ from grid import Grid
 from kicker import Kicker
 from world import World
 from mathutils import Vector
+from scene import Scene
 from config import Config
 import bpy
 
@@ -38,3 +39,12 @@ def custom():
 
 	world = World(config)
 
+def scene2():
+
+	monkeyData = (Vector((1,1,0)), Vector((0,0,0)), Vector((0,0,0)))
+	gridData = 9
+	trajectory = [Vector((2,1,0)), Vector((4,3,2)), Vector((6,7,4)), Vector((5,5,5)), Vector((3,8,7))]
+
+	config = Config(gridData, None, monkeyData, None)
+
+	Scene(config, trajectory)
